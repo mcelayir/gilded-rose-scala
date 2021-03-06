@@ -44,20 +44,6 @@ class GildedRoseTest  extends AnyFlatSpec with Matchers {
       app2 = app2.updateQuality2()
     }
 
-    System.out.println("-------- app 1--------")
-    System.out.println("name, sellIn, quality")
-    for (item <- app.items) {
-      System.out.println(item.name + ", " + item.sellIn + ", " + item.quality)
-    }
-    System.out.println()
-
-    System.out.println("-------- app 2--------")
-    System.out.println("name, sellIn, quality")
-    for (item <- app2.items) {
-      System.out.println(item.name + ", " + item.sellIn + ", " + item.quality)
-    }
-    System.out.println()
-
     app.items.map(i => (i.name, i.sellIn, i.quality)) should contain theSameElementsAs  app2.items.map(i => (i.name, i.sellIn, i.quality))
   }
 }
